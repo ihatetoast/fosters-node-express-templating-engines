@@ -1,0 +1,27 @@
+extends layouts/main-layout.pug 
+
+block styles 
+  link(rel="stylesheet", href="/css/fosters.css")
+
+block mainContent 
+  main
+      h1 Our current fosters
+      if fosters.length > 0
+        .grid
+          each foster in fosters
+            article.card
+              header.card__header
+                h2.name #{foster.name}
+              .card__image-container
+                img(src=foster.imageUrl || '/images/default-image.JPG', alt=foster.name || 'greyhound', onerror="this.onerror=null; this.src='/images/default-image.jpg';")
+              .card__content
+                p.description #{foster.bio}
+                ul.characteristics-list
+                  li.characteristics-list-item #{foster.isCatsafe}
+                  li.characteristics-list-item placeholder for small dog
+                  li.characteristics-list-item placeholder for only dog
+      else
+        p At this time, we do not have any fosters available for adoption
+        p Please check back soon.
+
+

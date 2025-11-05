@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{pageTitle}
+    link(rel="stylesheet", href="/css/styles.css")
+    // hook for other links
+    block styles
+  body
+    header.main-header
+      nav.main-header__nav
+        ul.main-header__nav-list 
+          li.main-header__nav-item
+            a(href="/", class=((path==='/' || path==='/fosters') ? 'active' : '')) Our Fosters 
+          li.main-header__nav-item
+            a(href="/admin/add-foster", class=(path==='/admin/add-foster' ? 'active' : '')) Add Foster
+    // hook for the main content of the page:  
+    block mainContent

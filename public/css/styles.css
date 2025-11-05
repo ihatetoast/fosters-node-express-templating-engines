@@ -1,0 +1,34 @@
+.test {
+  background-color: rebeccapurple;
+  border: 1px solid chartreuse;
+}
+
+.main-header {
+  border: 1px solid orangered;
+}
+
+.main-header__nav {
+ border: 1px solid rebeccapurple;
+}
+
+.main-header__nav-item-list  {
+ border: 1px solid chartreuse;
+}
+
+
+/* HEADER  */
+.main-header__nav-list  {
+  list-style: none;
+}
+
+.main-header__nav-item a {
+  text-decoration: none;
+}
+
+.main-header__nav-item a.active {
+  /* for testing  */
+  color: orangered;
+}
+
+
+/* MAIN  */

@@ -1,0 +1,26 @@
+extends layouts/main-layout.pug
+
+block styles
+  link(rel="stylesheet", href="/css/formStyles.css")
+
+block mainContent
+    main
+      form(action="/admin/add-foster", method="POST") 
+        fieldset
+          label(for="name") Foster's name 
+          input#name(type="text", name="name")
+        fieldset
+          label(for="imageUrl") Photo URL from GALT page 
+          input#imageUrl(type="text", name="imageUrl")
+        fieldset
+          label(for="bio") Brief bio for incoming foster 
+          textarea#bio(name="bio", rows='10', cols='30') 
+        fieldset
+          legend Is the foster cat safe?
+          input#untested(type="radio", name="iscatsafe", value="untested", checked)
+          label(for="untested") Not yet tested
+          input#notcatsafe(type="radio", name="iscatsafe", value="not cat safe")
+          label(for="notcatsafe") No
+          input#catsafe(type="radio", name="iscatsafe", value="cat safe")
+          label(for="catsafe") Yes
+        button(type="submit") Submit foster!

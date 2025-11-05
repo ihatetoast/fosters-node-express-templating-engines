@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/formStyles.css" />
+    <title>Add Foster Form</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Fosters</a>
+            <a href="/admin/add-foster">Add foster</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- change catsafe to dropdown. also add small dog safe. 
+    only etc -->
+    <main>
+      <!-- <div class="test">i am a test div</div> -->
+      <form action="/admin/add-foster" method="POST">
+        <label for="name">Name of the foster</label>
+        <input id="name" type="text" name="name" />
+        <label for="imageUrl">Url of hound from GALT page</label>
+        <input id="imageUrl" type="text" name="imageUrl" />
+        <label for="bio">Brief bio or history of incoming foster</label>
+        <textarea id="bio" name="bio"></textarea>
+        <p>Is the foster catsafe?</p>
+        <input
+          id="untested"
+          type="radio"
+          name="iscatsafe"
+          value="Not yet tested"
+          checked
+        />
+        <label for="untested">Not tested</label>
+        <input id="catsafe" type="radio" name="iscatsafe" value="catsafe" />
+        <label for="catsafe">Yes</label>
+        <input
+          id="notcatsafe"
+          type="radio"
+          name="iscatsafe"
+          value="Is not cat safe"
+        />
+        <label for="notcatsafe">No</label>
+        <button type="submit">Add foster to list</button>
+      </form>
+    </main>
+  </body>
+</html>
