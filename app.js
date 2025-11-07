@@ -2,12 +2,29 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// for handlebars
+const exphbs = require('express-handlebars');
+
 const app = express();
 
-// pug
-app.set('view engine', 'pug')
+// FOR HANDLEBARS TEMPLATING ENGINE
+// give it a name and call the fcn
+
+const hbs = exphbs.create({
+  extname: '.hbs',
+  defaultLayout: false, 
+});
+
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+
+// FOR PUG TEMPLATING ENGINE
+// pug is set up to work seamlessly
+// app.set('view engine', 'pug');
 // tell pug where the views are:
 // default works since using views
+
+
 app.set('views', 'views');
 
 
