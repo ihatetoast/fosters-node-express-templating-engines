@@ -8,11 +8,9 @@ const exphbs = require('express-handlebars');
 const app = express();
 
 // FOR HANDLEBARS TEMPLATING ENGINE
-// give it a name and call the fcn
-
 const hbs = exphbs.create({
   extname: '.hbs',
-  defaultLayout: false, 
+  defaultLayout: 'main', 
 });
 
 app.engine('hbs', hbs.engine);

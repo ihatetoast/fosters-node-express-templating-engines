@@ -15,7 +15,14 @@ router.get(['/', '/fosters'], (req, res, send) => {
   // regular HTML
   // res.sendFile(path.join(rootDirectory, 'views', 'fosters.html'));
   // for PUG templating engine:
-  res.render('fosters', {pageTitle: 'Current Fosters', fosters: fostersList, path:'/'});
-})
+  res.render('fosters', {
+    pageTitle: 'Current Fosters',
+    fosters: fostersList,
+    path: '/',
+    hasFosters: fostersList.length > 0,
+    activeFosters: true,
+    fostersCSS: true 
+  });
+});
 
 module.exports = router;

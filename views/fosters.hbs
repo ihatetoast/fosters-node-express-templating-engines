@@ -1,47 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>{{ pageTitle  }}</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Fosters</a>
-            <a href="/admin/add-foster">Add foster</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
+<main>
   <h1>Our current fosters</h1>
-  {{#each fosters}}
-    {{#if @first}}<div class="grid">{{/if}}
-    <article class="card">
-      <header class="card__header">
-        <h2 class="name">{{this.name}}</h2>
-      </header>
-      <div class="card__image-container">
-        <img src="/images/default-image.JPG" alt="greyhound">
-      </div>
-      <div class="card__content">
-        <p class="description">{{this.bio}}</p>
-        <ul class="characteristics-list">
-          <li class="caracteristics-list-item">{{this.isCatsafe}}</li>
-          <li class="caracteristics-list-item">placeholder for small dog</li>
-          <li class="caracteristics-list-item">placeholder for only dog</li>
-        </ul>
-      </div>
-    </article>
-    {{#if @last}}</div>{{/if}}
+  {{#if hasFosters}}
+    <div class='grid'>
+      {{#each fosters}}
+        <article class='card'>
+          <header class='card__header'>
+            <h2 class='name'>{{this.name}}</h2>
+          </header>
+          <div class='card__image-container'>
+            <img src={{'/images/default-image.JPG'}} alt='greyhound' />
+          </div>
+          <div class='card__content'>
+            <p class='description'>{{this.bio}}</p>
+            <ul class='characteristics-list'>
+              <li class='caracteristics-list-item'>{{this.isCatsafe}}</li>
+              <li class='caracteristics-list-item'>placeholder for small dog</li>
+              <li class='caracteristics-list-item'>placeholder for only dog</li>
+            </ul>
+          </div>
+        </article>
+      {{/each}}
+    </div>
   {{else}}
     <p>At this time, we do not have any fosters available for adoption</p>
     <p>Please check back soon.</p>
-  {{/each}}
+  {{/if}}
 </main>
-  </body>
-</html>
