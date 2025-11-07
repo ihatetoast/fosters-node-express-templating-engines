@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/fosters.css">
+  </head>
+  <body>
+
+<%- include('partials/navHeader') %>
+    <main>
+      <h1>Our current fosters</h1>
+      <% if(fosters.length > 0) { %>
+      <div class="grid">
+        <% fosters.forEach((foster)=> { %>
+        <article class="card">
+          <header class="card__header">
+            <h2 class="name"><%= foster.name %></h2>
+          </header>
+          <div class="card__image-container">
+            <img src="<%= foster.imageUrl || '/images/default-image.jpg' %>" alt='foster greyhound' />
+          </div>
+          <div class="card__content">
+            <p class="description"><%= foster.bio %></p>
+            <ul class="characteristics-list">
+              <li class="caracteristics-list-item"><%= foster.isCatsafe %></li>
+              <li class="caracteristics-list-item">
+                placeholder for small dog
+              </li>
+              <li class="caracteristics-list-item">placeholder for only dog</li>
+            </ul>
+          </div>
+        </article>
+        <% })%>
+      </div>
+      <% } else { %>
+      <p>At this time, we do not have any fosters available for adoption</p>
+      <p>Please check back soon.</p>
+      <% } %>
+    </main>
+<%- include('partials/end') %>

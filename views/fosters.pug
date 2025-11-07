@@ -13,7 +13,7 @@ block mainContent
               header.card__header
                 h2.name #{foster.name}
               .card__image-container
-                img(src=foster.imageUrl || '/images/default-image.JPG', alt=foster.name || 'greyhound', onerror="this.onerror=null; this.src='/images/default-image.jpg';")
+                img(src=foster.imageUrl || '/images/default-image.jpg', alt=foster.name || 'greyhound', onerror="this.onerror=null; this.src='/images/default-image.jpg';")
               .card__content
                 p.description #{foster.bio}
                 ul.characteristics-list

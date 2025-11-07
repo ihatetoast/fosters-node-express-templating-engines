@@ -19,9 +19,9 @@ router.get(['/', '/fosters'], (req, res, send) => {
     pageTitle: 'Current Fosters',
     fosters: fostersList,
     path: '/',
-    hasFosters: fostersList.length > 0,
-    activeFosters: true,
-    fostersCSS: true 
+    hasFosters: fostersList.length > 0, // for hbs
+    activeFosters: true, // for hbs
+    fostersCSS: true  // for hbs
   });
 });
 

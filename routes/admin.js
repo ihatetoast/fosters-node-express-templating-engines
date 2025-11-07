@@ -17,8 +17,8 @@ router.get('/add-foster', (req, res, next) => {
   res.render('add-foster', {
     pageTitle: 'Add Foster',
     path: '/admin/add-foster',
-    activeAddFoster: true, 
-    addFosterFormCSS: true,
+    activeAddFoster: true, // for hbs
+    addFosterFormCSS: true, // for hbs
   });
 });
 

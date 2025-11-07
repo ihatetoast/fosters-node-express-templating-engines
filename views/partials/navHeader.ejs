@@ -1,0 +1,21 @@
+<%# header tag nav %>
+<header>
+  <nav>
+    <ul class="main-header__nav-list">
+      <li class="main-header__nav-item">
+        <a
+          class="<%= (path === '/' || path === '/fosters') ? 'active' : '' %>"
+          href="/"
+          >Fosters</a
+        >
+      </li>
+      <li class="main-header__nav-item">
+        <a
+          class="<%= path === '/admin/add-foster' ? 'active' : '' %>"
+          href="/admin/add-foster"
+          >Add foster</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

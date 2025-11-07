@@ -15,11 +15,13 @@
   <body>
     <header>
       <nav>
-        <ul>
-          <li>
-            <a class="{{#if activeFosters}}active{{/if}}" href='/'>Fosters</a>
-            <a class="{{#if activeAddFoster}}active{{/if}}" href='/admin/add-foster'>Add foster</a>
-          </li>
+        <ul class="main-header__nav-list">
+        <li class="main-header__nav-item">
+          <a class="{{#if activeFosters}}active{{/if}}" href='/'>Fosters</a>
+        </li>
+        <li class="main-header__nav-item">
+          <a class="{{#if activeAddFoster}}active{{/if}}" href='/admin/add-foster'>Add foster</a>
+        </li>
         </ul>
       </nav>
     </header>
