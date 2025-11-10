@@ -21,3 +21,11 @@ Styling? Yeah, I'll fiddle faddle piddle paddle with that when the mood hits and
 - PugJS
 - Express EJS
 - HandlebarsJS
+
+## What's next? (w-word for to-do ... tada!)
+
+Since this is a fiddle faddle WiP, I'll be adding to this but not necessarily in one go. Glorified notes to myself.
+- delete or update product data
+- add input fields for only / not only, small dog safe, foster parent report. 
+- styling after form and all the data has been decided on. Will be like a card or more like an article? I do not know. 
+- db or stay fs? SQL or NoSQL?

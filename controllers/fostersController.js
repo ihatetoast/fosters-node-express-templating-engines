@@ -1,6 +1,4 @@
-
-const fosterList = [];
-
+const Foster = require('../models/foster');
 
 exports.getAddFoster = (req, res, next) => {
   // regular HTML
@@ -12,29 +10,31 @@ exports.getAddFoster = (req, res, next) => {
     activeAddFoster: true, // for hbs
     addFosterFormCSS: true, // for hbs
   });
-}
+};
 
 // on submit/post add to the dummy arr
 exports.postAddFoster = (req, res, next) => {
-  console.log(req.body);
-
-  fosterList.push({
-    name: req.body.name,
-    imageUrl: req.body.imageUrl,
-    bio: req.body.bio,
-    isCatsafe: req.body.iscatsafe,
-  });
+  const foster = new Foster(
+    req.body.name,
+    req.body.imageUrl,
+    req.body.bio,
+    req.body.iscatsafe
+  );
+  foster.save();
   res.redirect('/fosters');
-}
+};
 
 exports.getFosters = (req, res, send) => {
-  // for  templating engine:
-  res.render('fosters', {
-    pageTitle: 'Current Fosters',
-    fosters: fosterList,
-    path: '/',
-    hasFosters: fosterList.length > 0, // for hbs
-    activeFosters: true, // for hbs
-    fostersCSS: true  // for hbs
+  // pass a callback in fetchAll so Foster modal knows what to do with the data fetched.
+  const fosters = Foster.fetchAll((fosters) => {
+    // for  templating engine:
+    res.render('fosters', {
+      pageTitle: 'Current Fosters',
+      fosters: fosters,
+      path: '/',
+      hasFosters: fosters.length > 0, // for hbs
+      activeFosters: true, // for hbs
+      fostersCSS: true, // for hbs
+    });
   });
-}
+};
